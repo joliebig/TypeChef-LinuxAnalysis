@@ -8,7 +8,7 @@
 ##################################################################
 #srcPath=linux-2.6.33.3
 # XXX:$PWD/ makes the path absolute, it is needed for some stupid bug!
-srcPath=$PWD/l
+srcPath=$PWD/linux-2.6.33.3
 
 ##################################################################
 # List of files to preprocess
@@ -29,7 +29,11 @@ partialPreprocFlags="--bdd -x CONFIG_ \
   --include=completedConf.h --include=partialConf.h \
   -c $system.properties \
   --openFeat openFeaturesList.txt \
-  --writePI --recordTiming --lexdebug --errorXML --interface"
+  --writePI --recordTiming --lexdebug --errorXML --typecheck \
+  --rootfolder=/local/joliebig/ \
+  --fileconfig \
+  --codecoveragenh \
+  --pairwise"
 
 
 #  --typeSystemFeatureModelDimacs=2.6.33.3-2var.dimacs \
